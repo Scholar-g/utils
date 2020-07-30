@@ -1,0 +1,35 @@
+{
+  "name": "utilsgrow",
+  "version": "0.0.1",
+  "description": "JS growth tool library of Vue",
+  "main": "index.js",
+  "homepage": "",
+  "author": [{
+      "name": "scholar-k",
+      "email": "1544109860@qq.com"
+  }],
+  "repository": {
+      "type": "git",
+      "url": "git@github.com:scholar-g/utils.git"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^12.0.0",
+    "rollup": "^2.8.2"
+  },
+  "devDependencies": {
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rm -rf ./index.js && rollup -c"
+  },
+  "keywords": [
+      "utils",
+      "grow",
+      "js",
+      "vue"
+  ],
+  "license": "ISC"
+}
