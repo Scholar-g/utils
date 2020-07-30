@@ -1,6 +1,6 @@
 /**
- * 测试接口
- * @param {string} message 字符串,eg:Hello world!
+ * 生成随机字符串（随机长度或指定长度）
+ * @param {min, max} min 数字-最小长度，max 数字-最大长度
  */
 interface Func {
   (min: number, max: number): string;

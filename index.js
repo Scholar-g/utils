@@ -8,9 +8,17 @@ var RandomWord = function (min, max) {
     return str;
 };
 
+/**
+ * 加密
+ * @param {string}
+ */
+var md5 = require('js-md5');
+
 var index = {
     // 生成随机字符串
-    randomWord: RandomWord
+    randomWord: RandomWord,
+    // md5加密
+    md5: md5
 };
 
 module.exports = index;
