@@ -23,11 +23,12 @@ vPinyin
 ## 安装依赖
 npm i || yarn || cnpm utilsgrow
 ## 引入使用
-import { randomWord, md5, sha1, jsCookie, vPinyin } from 'utilsgrow'
+import { randomWord, md5, sha1, jsCookie, vPinyin, getQueryString } from 'utilsgrow'
 RandomWord(min, max) 生成随机长度min至max之间的随机字符串
 RandomWord(min) 生成长度min的随机字符串
 md5(string) 使用同md5
-sha1(string) 使用同sha1
+sha1.sha1(string) 使用同sha1
 jsCookie 使用同‘js-cookie’
+vPinyin.chineseToPinYin('中文') 汉字转拼音
 getQueryString(name) 取名为name的路由链接参数
 ```
