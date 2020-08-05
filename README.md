@@ -16,6 +16,10 @@ jsCookie
 getQueryString
 ## 汉字转拼音
 vPinyin
+## 上传阿里云
+uploadAliyun
+## 文件流下载
+dowloadFileStream
 ```
 
 # 安装使用
@@ -31,4 +35,6 @@ sha1.sha1(string) 使用同sha1
 jsCookie 使用同‘js-cookie’
 vPinyin.chineseToPinYin('中文') 汉字转拼音
 getQueryString(name) 取名为name的路由链接参数
+uploadAliyun(params: object, file: object, fileName: string) params阿里云所需参数(此参数由自定义后端接口返回)，file文件，fileName下载文件名
+dowloadFileStream(downloadUrl: string, params: object, fileName?: string, timeout?: number) downloadUrl下载请求接口地址，params下载请求所需参数，fileName下载文件名，timeout超时时长
 ```

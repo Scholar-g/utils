@@ -10,12 +10,19 @@ import jsCookie from './lib/jsCookie'
 import getQueryString from './lib/getQueryString'
 // 汉字转拼音
 import vPinyin from './lib/vPinyin'
+// 上传阿里云
+import uploadAliyun from './lib/uploadAliyun'
+// 文件流下载
+import dowloadFileStream from './lib/dowloadFileStream'
 
 export default {
     randomWord: RandomWord,
-    md5: md5,
-    sha1: sha1,
-    jsCookie: jsCookie,
-    getQueryString: getQueryString,
-    vPinyin: vPinyin
+    md5,
+    sha1,
+    jsCookie,
+    getQueryString,
+    vPinyin,
+    uploadAliyun,
+    dowloadFileStream
+
 }

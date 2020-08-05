@@ -1,7 +1,7 @@
 {
   "name": "utilsgrow",
-  "version": "0.4.0",
-  "description": "JS growth tool library of Vue add getQueryString",
+  "version": "0.5.0",
+  "description": "JS growth tool library of Vue add dowloadFileStream、uploadAliyun",
   "main": "index.js",
   "homepage": "",
   "author": [
@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@rollup/plugin-commonjs": "^12.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "axios": "^0.19.2",
     "js-cookie": "^2.2.1",
     "js-md5": "^0.7.3",
     "rollup": "^2.8.2"
