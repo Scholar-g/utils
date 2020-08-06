@@ -38,3 +38,17 @@ getQueryString(name) 取名为name的路由链接参数
 uploadAliyun(params: object, file: object, fileName: string) params阿里云所需参数(此参数由自定义后端接口返回)，file文件，fileName下载文件名
 dowloadFileStream(downloadUrl: string, params: object, fileName?: string, timeout?: number) downloadUrl下载请求接口地址，params下载请求所需参数，fileName下载文件名，timeout超时时长
 ```
+#更新记录
+```
+utilsgrow@0.5.0 增加上传阿里云和文件流下载
+utilsgrow@0.4.1
+utilsgrow@0.4.0
+utilsgrow@0.3.0
+utilsgrow@0.2.0
+utilsgrow@0.0.2
+utilsgrow@0.0.1
+```
+#issuse
+```
+有问题欢迎骚扰qq：762013545
+```

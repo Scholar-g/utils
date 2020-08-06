@@ -24,5 +24,4 @@ export default {
     vPinyin,
     uploadAliyun,
     dowloadFileStream
-
 }
