@@ -4,12 +4,10 @@
   "description": "JS growth tool library of Vue add arr、deviceInfo、deepClone",
   "main": "index.js",
   "homepage": "",
-  "author": [
-    {
+  "author": [{
       "name": "scholar-k",
       "email": "1544109860@qq.com"
-    }
-  ],
+  }],
   "repository": {
     "type": "git",
     "url": "git@github.com:scholar-g/utils.git"
