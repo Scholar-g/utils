@@ -44,19 +44,28 @@ arrFun
 npm i || yarn || cnpm utilsgrow
 ## 引入使用
 import { randomWord, md5, sha1, jsCookie, vPinyin, getQueryString } from 'utilsgrow'
+
 randomWord(min, max) 生成随机长度min至max之间的随机字符串
 randomWord(min) 生成长度min的随机字符串
+
 md5(string) 使用同md5
 sha1.sha1(string) 使用同sha1
+
 jsCookie 使用同‘js-cookie’
+
 vPinyin.chineseToPinYin('中文') 汉字转拼音
+
 getQueryString(name) 取名为name的路由链接参数
+
 uploadAliyun(params: object, file: object, fileName: string) params阿里云所需参数(此参数由自定义后端接口返回)，file文件，fileName下载文件名
 dowloadFileStream(downloadUrl: string, params: object, fileName?: string, timeout?: number) downloadUrl下载请求接口地址，params下载请求所需参数，fileName下载文件名，timeout超时时长
+
 ua 系统信息
 ua.browser 浏览器类型和版本
 ua.os 操作系统类型
+
 deepClone 深拷贝
+
 arrFun 数组
 arrFun.arrayEqual 判断两个数组是否相等，参数（arr1，arr2）两个数组，返回布尔值
 arrFun.deDuplicateArray 根据数组中某个对象值去重，参数（数组，健：string），返回去重后的数组
