@@ -6,24 +6,34 @@
 包含以下方法
 ## 生成随机字符串
 randomWord
+
 ## md5加密
 md5
+
 ## sha1加密
 sha1
+
 ## cookie操作
 jsCookie
+
 ## 获取路由参数
 getQueryString
+
 ## 汉字转拼音
 vPinyin
+
 ## 上传阿里云
 uploadAliyun
+
 ## 文件流下载
 dowloadFileStream
+
 ## 手机系统环境信息
 ua
+
 ## 深拷贝
 deepClone
+
 ## 数组函数
 arrFun
 ```
