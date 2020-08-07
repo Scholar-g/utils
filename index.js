@@ -12,7 +12,7 @@ var util = _interopDefault(require('util'));
 var supportsColor = _interopDefault(require('supports-color'));
 var zlib = _interopDefault(require('zlib'));
 
-var RandomWord = function (min, max) {
+var randomWord = function (min, max) {
     var str = "", max = max || min, arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
     max = Math.round(Math.random() * (max - min)) + min;
     for (var i = 0; i < max; i++)
@@ -3604,16 +3604,151 @@ var dowloadFileStream = function (downloadUrl, params, fileName, timeout) {
     });
 };
 
+function getBroweser() {
+    var sys = {};
+    var ua = navigator.userAgent.toLowerCase();
+    var s;
+    (s = ua.match(/rv:([\d.]+)\) like gecko/))
+        ? (sys.ie = s[1])
+        : (s = ua.match(/msie ([\d\.]+)/))
+            ? (sys.ie = s[1])
+            : (s = ua.match(/edge\/([\d\.]+)/))
+                ? (sys.edge = s[1])
+                : (s = ua.match(/firefox\/([\d\.]+)/))
+                    ? (sys.firefox = s[1])
+                    : (s = ua.match(/(?:opera|opr).([\d\.]+)/))
+                        ? (sys.opera = s[1])
+                        : (s = ua.match(/chrome\/([\d\.]+)/))
+                            ? (sys.chrome = s[1])
+                            : // tslint:disable-next-line: no-unused-expression
+                                (s = ua.match(/version\/([\d\.]+).*safari/))
+                                    ? (sys.safari = s[1])
+                                    : 0;
+    // 根据关系进行判断
+    if (sys.ie)
+        return 'IE: ' + sys.ie;
+    if (sys.edge)
+        return 'EDGE: ' + sys.edge;
+    if (sys.firefox)
+        return 'Firefox: ' + sys.firefox;
+    if (sys.chrome)
+        return 'Chrome: ' + sys.chrome;
+    if (sys.opera)
+        return 'Opera: ' + sys.opera;
+    if (sys.safari)
+        return 'Safari: ' + sys.safari;
+    return 'Unkonwn';
+}
+
+/**
+ *
+ * @desc 获取操作系统类型
+ * @return {String}
+ */
+function getOS() {
+    var userAgent = ('navigator' in window && 'userAgent' in navigator && navigator.userAgent.toLowerCase()) || '';
+    var vendor = ('navigator' in window && 'vendor' in navigator && navigator.vendor.toLowerCase()) || '';
+    var appVersion = ('navigator' in window && 'appVersion' in navigator && navigator.appVersion.toLowerCase()) || '';
+    if (/iphone/i.test(userAgent) || /ipad/i.test(userAgent) || /ipod/i.test(userAgent))
+        return 'ios';
+    if (/android/i.test(userAgent))
+        return 'android';
+    if (/win/i.test(appVersion) && /phone/i.test(userAgent))
+        return 'windowsPhone';
+    if (/mac/i.test(appVersion))
+        return 'MacOSX';
+    if (/win/i.test(appVersion))
+        return 'windows';
+    if (/linux/i.test(appVersion))
+        return 'linux';
+}
+
+/**
+ *
+ * @desc 获取操作系统信息
+ * @return {object}
+ */
+var ua = {
+    browser: getBroweser,
+    os: getOS
+};
+
+/**
+ *
+ * @desc 深度克隆数组或者对象
+ * @param {Array, Object}
+ * @return {Array, Object}
+ */
+function deepClone(val) {
+    val = JSON.parse(JSON.stringify(val));
+    return val;
+}
+
+/**
+ *
+ * @desc 判断两个数组是否相等
+ * @param {Array} arr1
+ * @param {Array} arr2
+ * @return {Boolean}
+ */
+function arrayEqual(arr1, arr2) {
+    var a1 = JSON.stringify(arr1.sort());
+    var a2 = JSON.stringify(arr2.sort());
+    return a1 === a2;
+}
+
+/**
+ * 根据数组中某个对象值去重
+ * @param {Array} arr 数组
+ * @param {String} key 对象中字段名
+ * @return {Array} 去重后的数组
+ * @author ss
+ */
+function deDuplicateArray(arr, key) {
+    var res = new Map();
+    return arr.filter(function (item) { return !res.has(item[key]) && res.set(item[key], 1); });
+}
+
+/**
+ * 传入两层数组[[],[开始时间, 结束时间],[]],去除数组中空数组
+ * @param {Array} arr 嵌套数组
+ * @return {Array} [[开始时间, 结束时间]]
+ * @author ss
+ */
+function removeEmptyArrays(arr) {
+    var newArr = [];
+    if (arr && arr.length > 0) {
+        newArr = arr.filter(function (item) {
+            return JSON.stringify([]) !== '[]';
+        });
+    }
+    return newArr;
+}
+
+/**
+ *
+ * @desc 数组操作
+ * @return {object}
+ */
+var arrFun = {
+    arrayEqual: arrayEqual,
+    deDuplicateArray: deDuplicateArray,
+    removeEmptyArrays: removeEmptyArrays
+};
+
 // 生成随机字符串
 var index = {
-    randomWord: RandomWord,
+    randomWord: randomWord,
     md5: md5,
     sha1: sha1,
     jsCookie: jsCookie,
     getQueryString: getQueryString,
     vPinyin: vPinyin,
     uploadAliyun: uploadAliyun,
-    dowloadFileStream: dowloadFileStream
+    dowloadFileStream: dowloadFileStream,
+    ua: ua,
+    deepClone: deepClone,
+    arrFun: arrFun
 };
 
 module.exports = index;

@@ -1,7 +1,7 @@
 {
   "name": "utilsgrow",
-  "version": "0.5.1",
-  "description": "JS growth tool library of Vue update readme",
+  "version": "0.6.0",
+  "description": "JS growth tool library of Vue add arr、deviceInfo、deepClone",
   "main": "index.js",
   "homepage": "",
   "author": [
