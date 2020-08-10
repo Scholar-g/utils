@@ -5,7 +5,7 @@
  * @return {String} fileName 下载文件名
  * @author ss
  */
-import axios from 'axios'
+const axios = require('axios')
 const instance = axios.create({
     timeout: 300000,
     headers: {
@@ -28,7 +28,7 @@ const instance = axios.create({
         }
         return ret
     }],
-    withCredentials: process.env.NODE_ENV === 'production'
+    // withCredentials: process.env.NODE_ENV === 'production'
 })
 const dowloadFileStream = (downloadUrl: string, params: object, fileName?: string, timeout?: number): object => {
     return new Promise(function (resolve, reject) {

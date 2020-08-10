@@ -9,17 +9,17 @@ import jsCookie from './lib/jsCookie'
 // 获取路由参数
 import getQueryString from './lib/getQueryString'
 // 汉字转拼音
-import vPinyin from './lib/turnPinyin/index'
-// 上传阿里云
-import uploadAliyun from './lib/uploadAliyun'
-// 文件流下载
-import dowloadFileStream from './lib/dowloadFileStream'
-// 手机系统环境信息
-import ua from './lib/deviceInfo'
+import vPinyin from './lib/vPinyin/vPinyin'
 // 深拷贝
 import deepClone from './lib/deepClone'
+// 设备信息
+import os from './lib/deviceInfo/deviceInfo'
 // 数组函数
-import arrFun from './lib/array'
+import arrFun from './lib/array/array'
+// 文件流下载
+import dowloadFileStream from './lib/dowloadFileStream'
+// 阿里云上传
+import uploadAliyun from './lib/uploadAliyun'
 
 export default {
     randomWord,
@@ -28,9 +28,9 @@ export default {
     jsCookie,
     getQueryString,
     vPinyin,
-    uploadAliyun,
-    dowloadFileStream,
-    ua,
     deepClone,
-    arrFun
+    os,
+    arrFun,
+    dowloadFileStream,
+    uploadAliyun
 }

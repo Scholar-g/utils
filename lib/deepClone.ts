@@ -4,9 +4,9 @@
  * @param {Array, Object}
  * @return {Array, Object}
  */
-function deepClone<T>(val: T) {
-  val = JSON.parse(JSON.stringify(val))
-  return val
+function deepClone(val: any): any {
+  let result = JSON.parse(JSON.stringify(val))
+  return result
 }
 
 export default deepClone

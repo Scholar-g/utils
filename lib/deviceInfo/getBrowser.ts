@@ -14,9 +14,10 @@ interface ISys {
 function getBroweser(): string {
   let sys: ISys = {}
   let ua: string = navigator.userAgent.toLowerCase()
-  let s
   // tslint:disable: no-conditional-assignment
-  ;(s = ua.match(/rv:([\d.]+)\) like gecko/))
+  let s;
+  // tslint:disable: no-conditional-assignment
+  (s = ua.match(/rv:([\d.]+)\) like gecko/))
     ? (sys.ie = s[1])
     : (s = ua.match(/msie ([\d\.]+)/))
     ? (sys.ie = s[1])

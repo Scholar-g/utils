@@ -5,7 +5,7 @@
  * @return {Array} 去重后的数组
  * @author ss
  */
-function deDuplicateArray(arr: [], key: string): any[] {
+function deDuplicateArray(arr: any[], key: string): any[] {
     let res = new Map()
     return arr.filter(item => !res.has(item[key]) && res.set(item[key], 1))
 }

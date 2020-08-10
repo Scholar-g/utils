@@ -3,11 +3,11 @@
  * @desc 获取操作系统类型
  * @return {String}
  */
-function getOS() {
+function getOS(): string {
   let userAgent =
     ('navigator' in window && 'userAgent' in navigator && navigator.userAgent.toLowerCase()) || ''
-  let vendor =
-    ('navigator' in window && 'vendor' in navigator && navigator.vendor.toLowerCase()) || ''
+  // let vendor =
+  //   ('navigator' in window && 'vendor' in navigator && navigator.vendor.toLowerCase()) || ''
   let appVersion =
     ('navigator' in window && 'appVersion' in navigator && navigator.appVersion.toLowerCase()) || ''
 

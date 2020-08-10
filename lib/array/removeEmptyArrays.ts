@@ -4,7 +4,7 @@
  * @return {Array} [[开始时间, 结束时间]]
  * @author ss
  */
-function removeEmptyArrays(arr: []): any[] {
+function removeEmptyArrays(arr: any[]): any[] {
     let newArr = []
     if (arr && arr.length > 0) {
         newArr = arr.filter(item => {

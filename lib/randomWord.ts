@@ -1,5 +1,5 @@
 /**
- * 生成随机字符串
+ * 生成随机字符串（随机长度或指定长度）
  * @param {min, max} min 数字-最小长度，max 数字-最大长度
  */
 interface Func {
