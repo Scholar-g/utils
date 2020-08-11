@@ -7,7 +7,7 @@ export default [{
     plugins: [resolve(), commonjs(), typescript()],
     output: [
         {
-            file: path.join(__dirname, 'index.js'),
+            file: path.join(__dirname, 'utilsgrow/index.js'),
             format: 'cjs'
         }
         // {
