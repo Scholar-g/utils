@@ -29,7 +29,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "rm -rf ./utilsgrow/index.js && rollup -c"
+    "dev": "rm -rf ./utilsgrow/index.js && rm -rf ./utilsgrow/package.json && cp -r ./package.json ./utilsgrow/package.json && rollup -c"
   },
   "keywords": [
     "utils",
